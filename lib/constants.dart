@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-final TextStyle GT2022 =
-    GoogleFonts.montserrat(fontWeight: FontWeight.w700, color: primaryBlue);
+final TextStyle GT2022 = GoogleFonts.montserrat(
+    fontWeight: FontWeight.w700, color: primaryBlue, fontSize: 24);
+
+final TextStyle appBarHeading = GoogleFonts.montserrat(
+    fontSize: 32, fontWeight: FontWeight.w700, color: Colors.white);
 
 final Color primaryBlue = HexColor("#024EC5");
 final Color secondaryBlue = HexColor("#01A8F8");
