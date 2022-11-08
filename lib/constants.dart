@@ -20,3 +20,6 @@ final backgroundColor = HexColor("#FBB040");
 final Color grey1 = HexColor("#333333");
 final Color tertiaryBlue = HexColor("#01A8F8");
 final Color fieldGray = HexColor("#868686");
+
+//Aspect rations for width and height based on screen size
+
