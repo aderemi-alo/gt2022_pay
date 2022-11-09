@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gt2022/constants.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -146,7 +145,9 @@ class _BodyState extends State<Body> {
                       gradient:
                           LinearGradient(colors: [secondaryBlue, primaryBlue])),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/phoneVerification");
+                    },
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5)),
