@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gt2022/constants.dart';
+import 'package:gt2022/customWidgets.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegistrationScreen extends StatelessWidget {
+  const RegistrationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +22,11 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _phoneNoController = TextEditingController();
-  TextEditingController _securityPinController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneNoController = TextEditingController();
+  final TextEditingController _securityPinController = TextEditingController();
   bool _passwordVisible = true;
 
   @override
@@ -46,18 +47,12 @@ class _BodyState extends State<Body> {
             children: [
               Text(
                 "Welcome,",
-                style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 24,
-                    color: primaryBlue),
+                style: screenHeading,
               ),
               SizedBox(height: 8 * heightRatio),
               Text(
                 "Create your account and get started",
-                style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: primaryBlue),
+                style: normalText1,
               ),
               SizedBox(height: 60 * heightRatio),
               CustomTextField(
@@ -95,7 +90,7 @@ class _BodyState extends State<Body> {
                     style: GoogleFonts.montserrat(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
-                        color: primaryBlue),
+                        color: Colors.black),
                   ),
                   SizedBox(height: 16 * heightRatio),
                   SizedBox(
@@ -137,87 +132,15 @@ class _BodyState extends State<Body> {
                 label: "Security Pin (4 digits)",
               ),
               SizedBox(height: 60 * heightRatio),
-              Center(
-                child: Container(
-                  width: double.infinity,
-                  height: 60,
-                  decoration: BoxDecoration(
-                      gradient:
-                          LinearGradient(colors: [secondaryBlue, primaryBlue])),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("/phoneVerification");
-                    },
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)),
-                        backgroundColor: Colors.transparent,
-                        shadowColor: Colors.transparent),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Continue",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 16, fontWeight: FontWeight.w700),
-                        ),
-                        SizedBox(width: 4 * widthRatio),
-                        const Icon(
-                          Icons.arrow_forward_ios,
-                          size: 14,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+              NaviagtionButton(
+                widthRatio: widthRatio,
+                destinationRoute: "/phoneVerification",
+                text: "Continue",
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    Key? key,
-    required this.heightRatio,
-    required this.fieldText,
-    required this.label,
-    required this.inputType,
-  }) : super(key: key);
-
-  final double heightRatio;
-  final TextEditingController fieldText;
-  final String label;
-  final TextInputType inputType;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: GoogleFonts.montserrat(
-              fontSize: 16, fontWeight: FontWeight.w700, color: primaryBlue),
-        ),
-        SizedBox(height: 16 * heightRatio),
-        SizedBox(
-          height: heightRatio * 45,
-          child: TextFormField(
-            style: GoogleFonts.montserrat(fontSize: 16),
-            decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-            ),
-            controller: fieldText,
-            textCapitalization: TextCapitalization.words,
-            onChanged: (value) => fieldText,
-          ),
-        ),
-      ],
     );
   }
 }

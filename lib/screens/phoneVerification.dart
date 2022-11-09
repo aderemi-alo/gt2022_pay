@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gt2022/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:gt2022/customWidgets.dart';
 
 class PhoneVerificationScreen extends StatelessWidget {
   const PhoneVerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: PVSBody(),
     );
   }
@@ -38,20 +40,50 @@ class _PVSBodyState extends State<PVSBody> {
             children: [
               Text(
                 "Account Verification",
-                style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 24,
-                    color: primaryBlue),
+                style: screenHeading,
               ),
               SizedBox(height: 8 * heightRatio),
               Text(
-                "Create your account and get started",
-                style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: primaryBlue),
+                "Please enter the 4 digit verification code sent to 0801-***-1419",
+                style: normalText1,
               ),
               SizedBox(height: 60 * heightRatio),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  PhoneVerificationFormField(),
+                  PhoneVerificationFormField(),
+                  PhoneVerificationFormField(),
+                  PhoneVerificationFormField(),
+                ],
+              ),
+              SizedBox(
+                height: heightRatio * 24,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Expires in ",
+                    style: GoogleFonts.montserrat(
+                        fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    "3:00",
+                    style: GoogleFonts.montserrat(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: HexColor("#DBA720")),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: heightRatio * 113,
+              ),
+              NaviagtionButton(
+                  widthRatio: widthRatio,
+                  text: "Continue",
+                  destinationRoute: "/login")
             ],
           ),
         ),

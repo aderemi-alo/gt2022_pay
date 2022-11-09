@@ -1,2 +1,2 @@
-export 'login.dart';
+export 'register.dart';
 export 'phoneVerification.dart';
