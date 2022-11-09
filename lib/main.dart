@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const RegistrationScreen(),
         '/phoneVerification': (context) => const PhoneVerificationScreen(),
+        '/login': (context) => const LoginScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

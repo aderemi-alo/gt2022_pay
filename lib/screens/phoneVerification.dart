@@ -29,11 +29,7 @@ class _PVSBodyState extends State<PVSBody> {
     double heightRatio = (MediaQuery.of(context).size.height / 900);
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(
-          top: (40 * heightRatio),
-          left: (24 * widthRatio),
-          right: (24 * widthRatio),
-        ),
+        padding: screenPadding(heightRatio, widthRatio),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

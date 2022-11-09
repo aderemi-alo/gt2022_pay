@@ -9,19 +9,19 @@ class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Body(),
+      body: RSBody(),
     );
   }
 }
 
-class Body extends StatefulWidget {
-  const Body({super.key});
+class RSBody extends StatefulWidget {
+  const RSBody({super.key});
 
   @override
-  State<Body> createState() => _BodyState();
+  State<RSBody> createState() => _RSBodyState();
 }
 
-class _BodyState extends State<Body> {
+class _RSBodyState extends State<RSBody> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -36,11 +36,7 @@ class _BodyState extends State<Body> {
 
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(
-          top: (40 * heightRatio),
-          left: (24 * widthRatio),
-          right: (24 * widthRatio),
-        ),
+        padding: screenPadding(heightRatio, widthRatio),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,8 +84,8 @@ class _BodyState extends State<Body> {
                   Text(
                     "Password",
                     style: GoogleFonts.montserrat(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
                         color: Colors.black),
                   ),
                   SizedBox(height: 16 * heightRatio),
@@ -116,7 +112,6 @@ class _BodyState extends State<Body> {
                             borderRadius: BorderRadius.circular(5)),
                       ),
                       controller: _passwordController,
-                      textCapitalization: TextCapitalization.words,
                       onChanged: (value) => _passwordController,
                     ),
                   ),

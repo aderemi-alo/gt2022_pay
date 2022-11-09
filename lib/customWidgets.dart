@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
         Text(
           label,
           style: GoogleFonts.montserrat(
-              fontSize: 16, fontWeight: FontWeight.w700, color: Colors.black),
+              fontSize: 12, fontWeight: FontWeight.w400, color: fontColor),
         ),
         SizedBox(height: 16 * heightRatio),
         SizedBox(

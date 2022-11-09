@@ -20,6 +20,11 @@ final backgroundColor = HexColor("#FBB040");
 final Color grey1 = HexColor("#333333");
 final Color tertiaryBlue = HexColor("#01A8F8");
 final Color fieldGray = HexColor("#868686");
+final Color fontColor = HexColor("#1E1E1E");
+final Color funkyYellow = HexColor("#DBA720");
 
-//Aspect rations for width and height based on screen size
-
+EdgeInsetsGeometry screenPadding(double heightRatio, double widthRatio) =>
+    EdgeInsets.only(
+        top: (40 * heightRatio),
+        left: (24 * widthRatio),
+        right: (24 * widthRatio));
