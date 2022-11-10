@@ -5,6 +5,9 @@ import 'package:hexcolor/hexcolor.dart';
 final TextStyle normalText1 = GoogleFonts.montserrat(
     fontWeight: FontWeight.w400, fontSize: 16, color: Colors.black);
 
+final TextStyle normalText2 = GoogleFonts.montserrat(
+    fontWeight: FontWeight.w400, fontSize: 14, color: fontColor);
+
 final TextStyle screenHeading = GoogleFonts.montserrat(
     fontSize: 24, fontWeight: FontWeight.w700, color: Colors.black);
 

@@ -18,6 +18,7 @@ dependencies:
   hexcolor: ^3.0.1
   email_validator: ^2.1.17
   flutter_svg: ^1.1.6
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +33,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images
-    - assets/icons
-    - assets/images/mastercardLogo.png
+    - assets/
