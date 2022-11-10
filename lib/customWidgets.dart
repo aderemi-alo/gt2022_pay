@@ -110,10 +110,7 @@ class PhoneVerificationFormField extends StatelessWidget {
         decoration: InputDecoration(
             border: const UnderlineInputBorder(), fillColor: fieldGray),
         style: GoogleFonts.montserrat(
-            textStyle: TextStyle(),
-            fontWeight: FontWeight.w700,
-            fontSize: 24,
-            color: Colors.black),
+            fontWeight: FontWeight.w700, fontSize: 24, color: Colors.black),
       ),
     );
   }

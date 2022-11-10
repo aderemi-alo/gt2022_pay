@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const RegistrationScreen(),
         '/phoneVerification': (context) => const PhoneVerificationScreen(),
         '/login': (context) => const LoginScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

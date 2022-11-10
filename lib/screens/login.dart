@@ -8,7 +8,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: LSBody(),
     );
   }
@@ -22,8 +22,8 @@ class LSBody extends StatefulWidget {
 }
 
 class _LSBodyState extends State<LSBody> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   bool _passwordVisible = false;
   bool _rememberMe = false;
 
@@ -49,7 +49,7 @@ class _LSBodyState extends State<LSBody> {
                     "Hi Cassandra,",
                     style: screenHeading,
                   ),
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 25,
                   ),
                 ],
@@ -151,7 +151,7 @@ class _LSBodyState extends State<LSBody> {
               NaviagtionButton(
                 widthRatio: widthRatio,
                 text: "Login",
-                destinationRoute: "",
+                destinationRoute: "/dashboard",
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -182,7 +182,7 @@ class _LSBodyState extends State<LSBody> {
                 child: IconButton(
                   iconSize: 50,
                   onPressed: () {},
-                  icon: Icon(Icons.fingerprint),
+                  icon: const Icon(Icons.fingerprint),
                 ),
               ),
               Center(
