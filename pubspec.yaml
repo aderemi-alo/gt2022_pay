@@ -20,6 +20,7 @@ dependencies:
   http: ^0.13.4
   get: ^4.6.5
   shared_preferences: ^2.0.15
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -37,3 +38,4 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/images/mastercardLogo.png
+    - assets/
