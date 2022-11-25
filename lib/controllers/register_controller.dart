@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:gt2022/utils/api_endpoints.dart';
@@ -39,8 +41,26 @@ class RegisterController extends GetxController {
           nameController.clear();
           emailController.clear();
           passwordController.clear();
+          // next is go to home page
+
+        } else {
+          throw jsonDecode(response.body)["Message"] ?? "Unknown Error Occured";
         }
+      } else {
+        throw jsonDecode(response.body)["Message"] ?? "Unknown Error Occured";
       }
-    } catch (e) {}
+    } catch (e) {
+      Get.back();
+      showDialog(
+          context: Get.context!,
+          builder: (context) {
+            return SimpleDialog(
+              title: Text('Error'),
+              contentPadding: EdgeInsets.all(20),
+              children: [Text(e.toString())],
+            );
+          });
+    }
+    ;
   }
 }
